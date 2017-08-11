@@ -1,0 +1,15 @@
+.arrow{
+    background-position: -138px -70px !important;
+    display: inline-block;
+    float: left;
+    height: 13px;
+	margin-left: -15px;
+    margin-right: 3px;
+    margin-top: 4px;
+	margin-bottom: -1px;
+    width: 13px;
+}
+.arrow {
+    background: url(/images/nav_logo242.png) no-repeat;
+    overflow: hidden;
+}

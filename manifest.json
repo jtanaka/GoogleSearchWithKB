@@ -1,0 +1,12 @@
+{
+  "name": "Google Search with Keyboard",
+  "version": "0.1",
+  "description": "Enable keyboard shortcut key 'j', 'k' and '/' on Google Search.",
+  "content_scripts": [
+    {
+      "matches": ["https://www.google.co.jp/*","https://www.google.com/*"],
+	    "css": ["focus.css"],
+      "js": ["jquery-3.2.1.min.js", "shortcut.js", "myscript.js"]
+    }],
+  "manifest_version": 2
+}
