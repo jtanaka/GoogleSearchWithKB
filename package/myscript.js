@@ -1,4 +1,6 @@
 $(function(){
+	const link_selector = ".g .r, #foot .ch";
+
 	document.addEventListener('shortcutSearchItems', function(a,b,c) {
 		var box = jQuery("input[name=q]");
 		box.focus();
@@ -6,10 +8,10 @@ $(function(){
 	
 	document.addEventListener('shortcutNextItem', function() {
 		jCurrent = getCurrent();
+		var jNext = null;
+		var jCurr = null;
 		if (0 < jCurrent.length) {
-			var jNext = null;
-			var jCurr = null;
-			jQuery(".g .r").each(function(){
+			jQuery(link_selector).each(function(){
 				if (jCurr) {
 					jNext = jQuery(this);
 					return false;
@@ -18,44 +20,49 @@ $(function(){
 					jCurr = jQuery(this);
 				}
 			});
-			
-			if (jNext) {
-				clearArrow();
-				setArrow(jNext);
-			}
+		}
+
+		clearArrow();
+		if (jNext) {
+			setArrow(jNext);
 		} else {
-			setArrow(jQuery(".g .r").first());
+			setArrow(jQuery(link_selector).first());
 		}
 	});
 	document.addEventListener('shortcutPrevItem', function() {
 		jCurrent = getCurrent();
+		var jPrev = null;
+		var jCurr = null;
 		if (0 < jCurrent.length) {
-			var jPrev = null;
-			var jCurr = null;
-			jQuery(".g .r").each(function(){
+			jQuery(link_selector).each(function(){
 				if (jQuery(this).is(jCurrent)) {
 					jCurr = jQuery(this);
 					return false;
 				}
 				jPrev = jQuery(this);
 			});
-			
-			if (jPrev) {
-				clearArrow();
-				setArrow(jPrev);
-			}
+		}
+
+		clearArrow();
+		if (jPrev) {
+			setArrow(jPrev);
 		} else {
-			setArrow(jQuery(".g .r").first());
+			setArrow(jQuery(link_selector).last());
 		}
 	});
 	
 	function getCurrent(){
-		return jQuery(".arrow").next(".r");
+		return jQuery(".arrow").next();
 	}
 	function setArrow(jElem){
 		var arrow = "<span class='arrow'></span>";
 		jQuery(arrow).insertBefore(jElem);
-		jElem.find("a").focus();
+
+		if (getCurrent().hasClass("r")) {
+			jElem.find("a").focus();
+		} else {
+			jElem.parents("a").focus();
+		}
 	}
 	function clearArrow(){
 		jQuery(".arrow").remove();
