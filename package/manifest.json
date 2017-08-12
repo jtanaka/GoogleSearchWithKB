@@ -1,6 +1,6 @@
 {
   "name": "Google Search with Keyboard",
-  "version": "0.1",
+  "version": "0.2",
   "description": "Enable keyboard shortcut key 'j', 'k' and '/' on Google Search.",
   "content_scripts": [
     {
