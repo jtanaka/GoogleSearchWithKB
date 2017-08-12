@@ -10,4 +10,6 @@ Enable keyboard shortcut key 'j', 'k' and '/' on google search.
 
 ### Material
 
-[Designed by Freepik and distributed by Flaticon](https://www.flaticon.com/packs/google-2)
+[Designed by Freepik and distributed from Flaticon](https://www.flaticon.com/packs/google-2)  
+[Designed by DinosoftLabs from Flaticon](https://www.flaticon.com/free-icon/keyboard_346063)  
+[Designed by Twitter from Flaticon](https://www.flaticon.com/packs/characters-and-numbers)  
